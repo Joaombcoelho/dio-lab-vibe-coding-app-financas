@@ -3,1137 +3,306 @@
 PRD refinado no ChatGPT e usado para comparação Gemini.
 
 ```markdown
-# PRD — FinanChat
-## Organizador de Finanças Pessoais com Inteligência Artificial
-**Versão:** 1.0
-**Tipo de documento:** Product Requirements Document (PRD)
-**Objetivo:** Planejamento de um MVP desenvolvido com Vibe Coding utilizando o Lovable.
-**Idioma da aplicação:** Português brasileiro.
-**Nome do produto:** FinanChat (provisório).
----
-# 1. VISÃO GERAL DO PRODUTO
+Crie um MVP de um aplicativo web de finanças pessoais chamado FinanChat, com interface em português do Brasil.
 
-## 1.1. Contexto
-O FinanChat será um aplicativo de organização de finanças pessoais que utiliza conversas em linguagem natural como principal forma de interação entre o usuário e um agente financeiro inteligente.
-O projeto será desenvolvido com auxílio de ferramentas de inteligência artificial, utilizando a abordagem Vibe Coding para planejar, construir, testar e aprimorar a aplicação.
-A proposta é simplificar o controle financeiro pessoal, permitindo que usuários registrem receitas e despesas, consultem seus gastos, acompanhem metas e recebam orientações educativas sem depender de planilhas ou formulários complexos.
-O aplicativo deverá apresentar uma interface moderna, intuitiva, responsiva e acessível ao maior número possível de pessoas, seguindo os princípios de Design Universal.
+Objetivo
 
-## 1.2. Problema que queremos resolver
-Muitas pessoas têm dificuldade em manter uma rotina de organização financeira porque os aplicativos tradicionais exigem muitos registros manuais, apresentam interfaces complexas e oferecem relatórios difíceis de interpretar.
-O FinanChat pretende reduzir essas barreiras por meio de uma experiência conversacional simples, na qual o usuário possa organizar suas finanças utilizando a linguagem que já utiliza no dia a dia.
+O aplicativo deve ajudar pessoas iniciantes a controlar receitas e despesas de forma simples, utilizando um chat com inteligência artificial como principal diferencial.
 
-## 1.3. Proposta de valor
-Permitir que qualquer pessoa tenha mais clareza sobre suas finanças pessoais conversando com um assistente inteligente, sem precisar dominar ferramentas financeiras ou preencher formulários extensos.
+Funcionalidades essenciais
+Dashboard: exibir saldo atual, total de receitas, total de despesas, últimas transações e um gráfico simples de gastos por categoria.
+Chat financeiro: permitir que o usuário escreva mensagens como “Gastei R$ 35 no mercado” ou “Recebi R$ 2.500 de salário”. Identificar valor, tipo, descrição e categoria, apresentar os dados para confirmação e registrar a transação somente após a confirmação.
+Histórico: listar transações com descrição, valor, categoria e data. Permitir adicionar e excluir transações.
+Atualização automática: ao registrar ou excluir uma transação, atualizar os valores do dashboard.
+Design e experiência
+Interface moderna, limpa e profissional.
+Textos em português brasileiro e valores formatados em reais (R$).
+Design responsivo para celular e computador.
+Priorizar Design Universal e acessibilidade: bom contraste, textos legíveis, botões fáceis de identificar, navegação simples e informações que não dependam apenas de cores.
+Evitar telas e funcionalidades desnecessárias.
+Escopo técnico
 
-## 1.4. Público-alvo
-O produto será direcionado principalmente a:
-* Pessoas que estão começando a organizar suas finanças.
-* Usuários que desejam controlar seus gastos de maneira prática.
-* Pessoas com pouca experiência em aplicativos financeiros.
-* Usuários que desejam criar metas e desenvolver hábitos financeiros melhores.
-* Pessoas que preferem conversar em vez de preencher formulários.
-A solução deverá considerar diferentes idades, níveis de alfabetização digital, habilidades e necessidades de acessibilidade.
+Primeiro, construa apenas a interface e as funcionalidades básicas do MVP. Organize o projeto para permitir integração posterior com banco de dados e IA.
 
-## 1.5. Diferencial do produto
-O chat deverá ser o centro da experiência, e não apenas um recurso adicional em um painel financeiro tradicional.
-O agente deverá compreender solicitações, utilizar os dados registrados pelo usuário, executar operações autorizadas e apresentar resultados compreensíveis.
-Exemplo:
-Usuário: "Gastei R$ 32,50 no almoço hoje."
-Agente: "Entendi! Você gastou R$ 32,50 com alimentação hoje. Deseja registrar essa despesa?"
-Após a confirmação e a gravação bem-sucedida, o sistema deverá atualizar os indicadores financeiros e informar que o registro foi concluído.
-Outro exemplo:
-Usuário: "Quanto gastei com alimentação este mês?"
-O agente deverá consultar as transações armazenadas e responder com os valores reais encontrados, sem inventar informações.
----
+Não implemente integração bancária, metas financeiras, relatórios avançados ou notificações neste momento.
 
-# 2. OBJETIVOS DO MVP
-O MVP deverá demonstrar que uma experiência conversacional pode tornar o controle financeiro mais simples e acessível.
-Os principais objetivos são:
-1. Registrar receitas e despesas por meio de conversas.
-2. Classificar transações automaticamente, permitindo correções.
-3. Consultar informações financeiras utilizando linguagem natural.
-4. Apresentar um resumo financeiro compreensível.
-5. Criar e acompanhar metas de economia.
-6. Fornecer recomendações educativas fundamentadas nos dados disponíveis.
-7. Oferecer uma experiência consistente em dispositivos móveis e computadores.
-8. Garantir que cada usuário tenha acesso somente aos próprios dados.
-9. Validar a utilidade do produto com testes funcionais e, quando possível, usuários reais.
-O MVP deverá priorizar poucos fluxos completos e confiáveis em vez de muitas funcionalidades parcialmente implementadas.
----
+Não crie funcionalidades que apenas aparentem funcionar. Identifique claramente qualquer dado demonstrativo e informe quais recursos ainda precisam de backend ou de integração com IA.
 
-# 3. ESCOPO E PRIORIZAÇÃO DAS FUNCIONALIDADES
-## 3.1. Funcionalidades essenciais — primeira versão
-### F01. Autenticação e perfil
-* Permitir cadastro, login e logout.
-* Manter os dados associados ao usuário autenticado.
-* Permitir acesso às informações pessoais somente mediante autorização.
-* Oferecer uma experiência simples de primeiro acesso.
-* Permitir encerrar a sessão com segurança.
+Resultado esperado
 
-### F02. Chat com o agente financeiro
-* Disponibilizar uma interface de conversa como principal ponto de interação.
-* Aceitar mensagens em português brasileiro.
-* Interpretar solicitações relacionadas às finanças pessoais.
-* Apresentar respostas claras e objetivas.
-* Solicitar esclarecimentos quando faltarem informações necessárias.
-* Exibir feedback sobre operações em andamento, concluídas ou com falha.
-* Permitir consultar o histórico de conversas, quando disponível.
+Um MVP enxuto, visualmente consistente e fácil de demonstrar no desafio da DIO. Priorize concluir poucas funcionalidades corretamente, em vez de construir muitas funcionalidades incompletas.
 
-### F03. Registro de receitas e despesas
+Antes de implementar, apresente brevemente o plano de execução e a estrutura proposta. Não amplie o escopo sem necessidade.
 
-O sistema deverá interpretar mensagens como:
+Quero finalizar o MVP do FinanChat, um aplicativo de finanças pessoais com interface em português brasileiro, desenvolvido neste projeto.
 
-* "Gastei R$ 45 no supermercado."
-* "Recebi R$ 2.500 de salário."
-* "Paguei R$ 120 de energia ontem."
-* "Gastei R$ 18,90 com transporte."
-* "Recebi R$ 200 de um trabalho extra."
+INSTRUÇÃO PRINCIPAL: trabalhe sobre o projeto existente. Preserve o layout, os componentes e as funcionalidades que já estiverem funcionando. Não recrie o projeto, não faça mudanças desnecessárias e não amplie o escopo.
 
-O agente deverá identificar:
+O objetivo é entregar uma versão pequena, funcional e demonstrável para o desafio da DIO, economizando créditos de desenvolvimento.
 
-* Tipo da transação: receita ou despesa.
-* Valor monetário.
+1. Armazenamento local
+
+Utilize localStorage do navegador para persistir as transações. Não utilize Supabase, Firebase ou banco de dados externo nesta versão.
+
+Cada transação deverá conter:
+
+ID único;
+descrição;
+valor numérico;
+tipo: receita ou despesa;
+categoria;
+data da transação;
+data de criação.
+
+Implemente funções reutilizáveis para listar, adicionar e excluir transações.
+
+Os dados devem continuar disponíveis após atualizar ou fechar e reabrir a página no mesmo navegador, desde que o armazenamento do site não seja apagado.
+
+Valide os dados e trate erros de leitura e gravação. Só informe sucesso quando a gravação for concluída. Não utilize dados fictícios no dashboard quando não houver transações.
+
+2. Integração real com inteligência artificial
+
+Integre o chat existente a um modelo real de IA capaz de interpretar mensagens em português brasileiro.
+
+Utilize um provedor de IA compatível, preferencialmente aproveitando uma integração já disponível no projeto. Se não houver nenhuma, escolha uma opção simples e compatível com o Lovable e informe qual provedor e configuração serão necessários.
+
+A chamada à IA deverá acontecer por meio de um backend seguro, como uma Supabase Edge Function ou outra função serverless compatível. Não exponha chaves de API, segredos ou credenciais no frontend.
+
+A IA deve interpretar mensagens como:
+
+"Gastei R$ 35 no mercado."
+"Recebi R$ 2.500 de salário."
+"Paguei R$ 80 de energia ontem."
+"Gastei R$ 24,90 no almoço hoje."
+
+A resposta estruturada da IA deverá conter:
+
+intenção identificada;
+tipo da transação;
+valor;
+descrição;
+categoria sugerida;
+data, quando informada;
+indicação de quais informações estão faltando.
+
+Utilize uma saída estruturada e valide os dados no frontend antes de permitir a confirmação. Não confie cegamente na resposta da IA.
+
+3. Confirmação antes de registrar
+
+Implemente este fluxo:
+
+O usuário envia uma mensagem.
+A IA interpreta a mensagem.
+O sistema apresenta uma prévia da transação identificada.
+O usuário pode confirmar ou cancelar.
+Se faltar informação essencial, o chat deve solicitar esclarecimentos.
+Após a confirmação, o sistema valida os dados e salva a transação no localStorage.
+O chat informa o sucesso somente depois da gravação.
+O dashboard e o histórico são atualizados.
+
+A IA nunca deve salvar transações diretamente, afirmar que salvou algo antes da gravação ou inventar valores e datas.
+
+Evite duplicações causadas por cliques repetidos no botão de confirmação.
+
+4. Dashboard financeiro
+
+Conecte os componentes existentes às transações realmente salvas.
+
+Exiba:
+
+saldo atual;
+total de receitas;
+total de despesas;
+últimas transações;
+gráfico simples de gastos por categoria, caso já exista na interface.
+
+Calcule o saldo como receitas menos despesas. Atualize os indicadores sempre que uma transação for adicionada ou excluída.
+
+Utilize valores em reais (R$), com formatação brasileira. Se não houver transações, exiba um estado vazio amigável.
+
+5. Histórico de transações
+
+Permita:
+
+listar as transações salvas;
+visualizar descrição, valor, tipo, categoria e data;
+excluir uma transação;
+atualizar os indicadores após a exclusão.
+
+Peça confirmação antes de excluir, se isso estiver alinhado à interface atual.
+
+6. Design Universal e usabilidade
+
+Preserve a identidade visual existente e priorize:
+
+interface responsiva;
+textos claros e simples;
+bom contraste e fontes legíveis;
+botões com rótulos compreensíveis;
+navegação por teclado;
+identificação acessível dos campos;
+mensagens de erro úteis;
+estados de carregamento durante as chamadas à IA.
+
+Não dependa apenas de cores para diferenciar receitas e despesas.
+
+7. Segurança, limites e custos
+Nunca exponha a chave da API no código do navegador.
+Armazene segredos somente na configuração segura do backend.
+Não envie dados financeiros desnecessários ao provedor de IA.
+Trate falhas, limites de requisição e indisponibilidade do provedor.
+Não simule uma resposta real de IA se a integração estiver indisponível.
+Informe claramente se houver necessidade de cadastrar uma chave, habilitar um serviço ou configurar cobrança.
+Mantenha o armazenamento local separado da integração com IA para facilitar uma futura migração para banco de dados.
+8. Escopo reduzido
+
+Não implemente agora:
+
+autenticação de usuários;
+sincronização entre dispositivos;
+integração bancária;
+metas financeiras;
+notificações;
+relatórios avançados;
+funcionalidades adicionais não solicitadas.
+9. Execução econômica
+
+Antes de alterar o código, analise a estrutura atual e identifique os componentes que podem ser reutilizados.
+
+Implemente somente as mudanças necessárias para conectar o chat à IA, persistir transações localmente e atualizar o dashboard.
+
+Não reescreva arquivos inteiros quando uma alteração pontual for suficiente. Não instale dependências desnecessárias e não recrie telas já existentes.
+
+Se uma configuração externa for necessária, explique exatamente o que preciso fazer. Não substitua uma integração real por uma simulação silenciosa.
+
+10. Critérios de conclusão
+
+Considere o MVP concluído quando for possível:
+
+Enviar uma mensagem ao chat e obter uma interpretação de uma IA real.
+Visualizar e confirmar uma transação antes de registrá-la.
+Salvar a transação no navegador.
+Atualizar o dashboard e o histórico.
+Excluir uma transação e recalcular os totais.
+Atualizar a página sem perder as transações salvas.
+Receber mensagens claras quando a IA ou o armazenamento falharem.
+
+Ao finalizar, informe o que foi implementado, os testes realizados e as configurações externas ainda necessárias.
+
+Prioridade absoluta: entregar um MVP pequeno, funcional, acessível e demonstrável, sem comprometer o trabalho existente nem consumir créditos com funcionalidades fora do escopo.
+
+Quero melhorar a organização da interface do projeto **FinanChat**, mantendo as funcionalidades existentes de armazenamento local e integração com IA.
+
+**Importante:** altere somente o necessário. Não recrie o projeto, não remova funcionalidades existentes e não modifique a integração com IA ou o armazenamento das transações sem necessidade.
+
+## 1. Transformar a página principal em um dashboard
+
+A página inicial deve ser o centro de controle financeiro do usuário, reunindo os indicadores, os gráficos e o campo de conversa com a IA.
+
+Organize a tela nesta ordem:
+
+### A. Cabeçalho
+
+* Nome e identidade visual do FinanChat.
+* Título de boas-vindas, como "Visão geral das suas finanças".
+* Seletor de período, com opções como este mês, últimos 30 dias e este ano, se for simples implementar.
+
+### B. Resumo financeiro
+
+Exiba cartões com:
+
+* **Saldo atual:** receitas menos despesas do período ou saldo acumulado, deixando claro qual cálculo está sendo usado.
+* **Receitas:** total recebido no período selecionado.
+* **Despesas:** total gasto no período selecionado.
+* **Resultado do período:** diferença entre receitas e despesas.
+
+Os cartões devem utilizar os dados reais armazenados no `localStorage`, sem valores fictícios.
+
+### C. Chat financeiro integrado à página principal
+
+Remova a necessidade de acessar uma aba separada para registrar transações pelo chat.
+
+Coloque diretamente no dashboard uma caixa de conversa com IA, incluindo:
+
+* Campo de texto com o placeholder "Ex.: Gastei R$ 35 no mercado".
+* Botão de envio e suporte ao envio pela tecla Enter.
+* Indicador de carregamento enquanto a IA interpreta a mensagem.
+* Resposta da IA na própria área de conversa.
+* Prévia da transação identificada.
+* Botões para confirmar ou cancelar antes de salvar.
+* Solicitação de esclarecimentos quando faltarem informações.
+
+Após a confirmação, registre a transação no `localStorage` e atualize os indicadores e gráficos imediatamente.
+
+O chat deve ficar visível na página inicial, preferencialmente logo abaixo dos cartões financeiros e antes dos gráficos, sem exigir navegação para outra tela.
+
+Mantenha o histórico da conversa durante a utilização da página. Se já existir uma tela de chat funcional, reutilize sua lógica e seus componentes, adaptando sua apresentação ao dashboard em vez de duplicar a implementação.
+
+### D. Gráficos financeiros
+
+Crie uma seção chamada "Análise financeira" com gráficos simples, claros e responsivos:
+
+1. **Receitas x despesas:** gráfico de barras comparando os totais do período selecionado.
+2. **Despesas por categoria:** gráfico de barras ou gráfico de rosca mostrando a distribuição dos gastos.
+3. **Evolução financeira:** gráfico de linha ou barras mostrando receitas e despesas ao longo do tempo, caso existam dados suficientes.
+
+Os gráficos devem utilizar exclusivamente as transações reais do `localStorage` e respeitar o período selecionado.
+
+Quando não houver dados, mostre uma mensagem explicativa em vez de inventar valores.
+
+Inclua títulos, legendas, valores em reais e alternativas textuais para facilitar a compreensão por pessoas que utilizam tecnologias assistivas.
+
+### E. Transações recentes
+
+Abaixo dos gráficos, mostre uma lista ou tabela com as transações mais recentes, contendo:
+
 * Descrição.
-* Data da transação.
-* Categoria sugerida.
-* Informações que ainda precisam ser confirmadas.
+* Categoria.
+* Data.
+* Tipo.
+* Valor.
 
-A transação somente será considerada registrada após a conclusão bem-sucedida da operação de gravação.
+Inclua uma opção para visualizar o histórico completo, reutilizando a tela de histórico existente, caso já esteja implementada.
 
-### F04. Categorização automática
+## 2. Navegação
 
-Disponibilizar categorias iniciais, como:
+Mantenha uma navegação simples e consistente.
 
-* Alimentação.
-* Moradia.
-* Transporte.
-* Saúde.
-* Educação.
-* Lazer.
-* Compras.
-* Contas e serviços.
-* Salário.
-* Renda extra.
-* Outros.
+A página inicial deve abrir no dashboard. Se houver menu lateral ou superior, preserve-o e mantenha acesso ao histórico e às configurações existentes.
 
-As categorias deverão ser adequadas ao tipo de transação.
+O registro pelo chat deve acontecer diretamente na página principal, sem exigir que o usuário clique em "Registrar pelo chat" ou abra outra aba.
 
-O usuário deverá conseguir corrigir uma classificação incorreta.
+Não remova o histórico de transações se ele já existir.
 
-### F05. Dashboard financeiro
+## 3. Regras de funcionamento
 
-Apresentar um resumo com:
+* Utilize os dados existentes no `localStorage`.
+* Não crie uma segunda fonte de armazenamento.
+* Não duplique a lógica de integração com IA.
+* Atualize os cartões, gráficos e transações recentes após cada inclusão ou exclusão.
+* Respeite a confirmação antes de gravar transações.
+* Trate erros de IA e de armazenamento com mensagens claras.
+* Preserve a responsividade e os recursos de acessibilidade.
 
-* Total de receitas do período.
-* Total de despesas do período.
-* Resultado financeiro do período.
-* Quantidade de transações registradas.
-* Distribuição de despesas por categoria.
-* Progresso das metas financeiras.
-* Atalho para iniciar uma conversa com o agente.
+## 4. Critérios de conclusão
 
-Os valores deverão ser calculados com base nas transações armazenadas.
+A alteração estará concluída quando:
 
-O resultado financeiro do período será calculado pela diferença entre receitas e despesas daquele período. Não deverá ser apresentado como saldo bancário real.
+1. O usuário abrir o FinanChat e visualizar o dashboard.
+2. Conseguir registrar uma despesa ou receita diretamente pela caixa de texto na página principal.
+3. Conseguir confirmar ou cancelar a transação na própria página.
+4. Visualizar os cartões e gráficos atualizados após a gravação.
+5. Conseguir consultar as transações recentes e acessar o histórico completo.
+6. Toda a interface funcionar adequadamente em computador e celular.
 
-### F06. Histórico de transações
+Antes de implementar, analise a interface atual e reutilize o máximo possível do código existente. Priorize uma alteração pontual, profissional e funcional, sem ampliar o escopo do MVP.
 
-Permitir:
-
-* Visualizar receitas e despesas.
-* Consultar transações por período.
-* Filtrar por categoria e tipo.
-* Consultar detalhes de uma transação.
-* Editar transações.
-* Excluir transações mediante confirmação.
-* Atualizar os indicadores após alterações.
-
-### F07. Metas financeiras
-
-Permitir ao usuário:
-
-* Criar uma meta com nome e valor desejado.
-* Informar um prazo opcional.
-* Acompanhar o progresso da meta.
-* Consultar o valor restante para atingir o objetivo.
-* Receber sugestões educativas para melhorar o planejamento.
-
-O sistema deverá deixar claro que uma meta cadastrada não representa dinheiro efetivamente guardado em uma conta bancária.
-
-### F08. Recomendações educativas
-
-O agente poderá:
-
-* Identificar categorias com despesas elevadas.
-* Apresentar sugestões de economia.
-* Ajudar o usuário a estabelecer metas realistas.
-* Explicar conceitos financeiros básicos.
-* Sugerir hábitos de organização financeira.
-
-As recomendações deverão ser fundamentadas nos dados disponíveis.
-
-Quando não houver dados suficientes, o agente deverá informar essa limitação e oferecer orientações gerais claramente identificadas como tais.
-
-O agente não deverá inventar gastos, prometer resultados financeiros ou apresentar recomendações especulativas como certezas.
-
-### F09. Relatórios simples
-
-Permitir consultar:
-
-* Receitas e despesas por período.
-* Gastos por categoria.
-* Comparação entre períodos, quando houver dados suficientes.
-* Evolução das metas financeiras.
-
-Os relatórios deverão incluir valores e descrições textuais, sem depender exclusivamente de gráficos.
-
-### F10. Tratamento de erros
-
-* Informar quando uma operação não puder ser concluída.
-* Evitar confirmações falsas de gravação.
-* Permitir que o usuário corrija informações.
-* Impedir registros com valores inválidos.
-* Tratar mensagens ambíguas de maneira segura.
-* Oferecer uma alternativa clara quando a IA não compreender uma solicitação.
-
-## 3.2. Funcionalidades futuras
-
-As seguintes funcionalidades poderão ser consideradas após a validação do MVP:
-
-* Transações recorrentes.
-* Lembretes de vencimentos.
-* Orçamentos mensais por categoria.
-* Exportação de relatórios.
-* Categorias personalizadas.
-* Metas compartilhadas.
-* Entrada por voz.
-* Importação de extratos.
-* Integração bancária autorizada.
-* Aplicativo móvel nativo.
-* Recursos adicionais de personalização e acessibilidade.
-
-## 3.3. Fora do escopo inicial
-
-Não deverão ser requisitos obrigatórios da primeira versão:
-
-* Integração bancária automática.
-* Movimentação de dinheiro.
-* Pagamentos de contas.
-* Compra e venda de investimentos.
-* Concessão de crédito.
-* Consultoria financeira profissional automatizada.
-* Previsões financeiras apresentadas como garantias.
-* Funcionalidades complexas de contabilidade.
-
----
-
-# 4. TELAS E EXPERIÊNCIA DO USUÁRIO
-
-## 4.1. Apresentação inicial
-
-Objetivo: explicar o valor do FinanChat de maneira simples.
-
-Componentes:
-
-* Nome e identidade visual.
-* Mensagem de apresentação.
-* Benefícios principais.
-* Botões de cadastro e login.
-* Informações básicas sobre privacidade.
-
-## 4.2. Autenticação
-
-Objetivo: permitir o acesso seguro ao aplicativo.
-
-Componentes:
-
-* Campos de e-mail e senha.
-* Opção de exibir a senha.
-* Validação dos campos.
-* Mensagens de erro acessíveis.
-* Recuperação de senha, quando suportada.
-* Links para cadastro e login.
-
-## 4.3. Dashboard
-
-Objetivo: oferecer uma visão rápida da situação financeira registrada.
-
-Componentes:
-
-* Saudação ao usuário.
-* Seletor de período.
-* Resumo de receitas e despesas.
-* Resultado financeiro do período.
-* Gastos por categoria.
-* Metas em andamento.
-* Transações recentes.
-* Acesso destacado ao chat.
-
-A tela deverá manter uma hierarquia visual clara, sem excesso de cartões ou informações concorrentes.
-
-## 4.4. Chat financeiro
-
-Objetivo: permitir que o usuário realize as principais operações por meio de linguagem natural.
-
-Componentes:
-
-* Histórico de mensagens.
-* Campo de texto.
-* Botão de envio.
-* Sugestões de perguntas.
-* Indicador de processamento.
-* Resumos de transações identificadas.
-* Controles de confirmação, correção e cancelamento.
-* Mensagens de sucesso e erro.
-
-Exemplos de sugestões:
-
-* "Registrar uma despesa."
-* "Quanto gastei este mês?"
-* "Criar uma meta de economia."
-* "Onde posso economizar?"
-
-As sugestões deverão funcionar como atalhos, sem obrigar o usuário a utilizá-las.
-
-## 4.5. Histórico de transações
-
-Objetivo: permitir consultar e corrigir os registros financeiros.
-
-Componentes:
-
-* Lista de transações.
-* Data, descrição, categoria e valor.
-* Identificação visual de receitas e despesas.
-* Filtros de período, categoria e tipo.
-* Ações de edição e exclusão.
-* Estado vazio com orientação para começar.
-
-## 4.6. Metas financeiras
-
-Objetivo: ajudar o usuário a acompanhar objetivos financeiros.
-
-Componentes:
-
-* Lista de metas.
-* Nome e valor desejado.
-* Prazo opcional.
-* Progresso.
-* Valor restante.
-* Ação para criar ou editar uma meta.
-
-O método utilizado para calcular o progresso deverá ser claramente explicado. Não deverá pressupor que uma meta possui depósitos reais vinculados se essa funcionalidade não existir.
-
-## 4.7. Relatórios
-
-Objetivo: facilitar a compreensão dos padrões de receitas e despesas.
-
-Componentes:
-
-* Seleção de período.
-* Resumo dos valores.
-* Despesas por categoria.
-* Comparações disponíveis.
-* Gráficos acessíveis.
-* Descrições textuais dos resultados.
-
-## 4.8. Configurações e perfil
-
-Objetivo: permitir gerenciar preferências e informações da conta.
-
-Componentes:
-
-* Dados básicos do perfil.
-* Preferências visuais disponíveis.
-* Tema claro ou escuro, se implementado.
-* Opções de acessibilidade.
-* Informações de privacidade.
-* Logout.
-
-## 4.9. Fluxo principal de utilização
-
-1. O usuário acessa o aplicativo.
-2. Realiza o cadastro ou login.
-3. Visualiza uma apresentação simples do FinanChat.
-4. Abre o chat.
-5. Envia uma mensagem relatando uma receita ou despesa.
-6. O agente interpreta a mensagem.
-7. O sistema apresenta os dados identificados.
-8. O usuário confirma ou corrige as informações.
-9. O backend registra a transação.
-10. O sistema informa o resultado da operação.
-11. O dashboard e os relatórios refletem os dados atualizados.
-
-Esse fluxo deverá funcionar de ponta a ponta antes da expansão para funcionalidades secundárias.
-
----
-
-# 5. COMPORTAMENTO DO AGENTE FINANCEIRO
-
-## 5.1. Papel do agente
-
-O agente financeiro deverá funcionar como um assistente educativo e operacional, auxiliando o usuário na organização de suas finanças pessoais.
-
-Deverá compreender solicitações em linguagem natural, consultar informações autorizadas, propor classificações e executar operações de acordo com as regras do sistema.
-
-## 5.2. Intenções reconhecidas
-
-O agente deverá identificar, no mínimo:
-
-* Registro de despesa.
-* Registro de receita.
-* Consulta de gastos.
-* Consulta de receitas.
-* Consulta do resultado financeiro.
-* Consulta de gastos por categoria.
-* Criação de meta.
-* Consulta de metas.
-* Solicitação de recomendações.
-* Correção de transação.
-* Exclusão de transação.
-* Solicitação não financeira ou não compreendida.
-
-## 5.3. Interpretação de mensagens
-
-O agente deverá extrair informações estruturadas da mensagem.
-
-Exemplo:
-
-Mensagem: "Paguei R$ 85 de internet ontem."
-
-Interpretação esperada:
-
-* Tipo: despesa.
-* Valor: R$ 85,00.
-* Descrição: internet.
-* Categoria sugerida: contas e serviços.
-* Data: dia anterior, de acordo com a data local aplicável.
-* Estado: aguardando confirmação, quando exigida pelo fluxo.
-
-## 5.4. Informações incompletas
-
-Se o usuário escrever "Gastei no mercado", o agente deverá perguntar qual foi o valor antes de tentar registrar a transação.
-
-Se o valor estiver presente, mas houver dúvida sobre a data ou a natureza da operação, deverá solicitar esclarecimento quando essa informação for necessária.
-
-Não deverá inventar dados ausentes.
-
-## 5.5. Confirmação de operações
-
-A interpretação da IA deverá ser separada da persistência dos dados.
-
-O sistema deverá:
-
-1. Interpretar a mensagem.
-2. Validar os dados.
-3. Apresentar a transação para confirmação, conforme as regras definidas.
-4. Executar a gravação após a autorização necessária.
-5. Verificar o resultado do backend.
-6. Informar o sucesso somente após a confirmação da gravação.
-
-A exclusão de registros deverá exigir confirmação explícita.
-
-## 5.6. Consultas financeiras
-
-O agente deverá consultar os dados armazenados e utilizar funções ou consultas controladas do backend para calcular os resultados.
-
-Não deverá utilizar apenas o texto da conversa como fonte de verdade.
-
-Quando não houver dados suficientes para responder, deverá explicar a limitação.
-
-## 5.7. Tratamento de duplicidade
-
-O sistema deverá reduzir o risco de registrar a mesma transação duas vezes por causa de reenvios ou repetições de uma solicitação.
-
-Quando houver suspeita de duplicidade, deverá solicitar confirmação adicional ou utilizar mecanismos técnicos de idempotência adequados ao fluxo.
-
-Não deverá excluir automaticamente registros apenas porque possuem valores semelhantes.
-
-## 5.8. Limites do agente
-
-O agente não deverá:
-
-* Inventar transações.
-* Afirmar que uma operação foi salva sem confirmação do backend.
-* Confundir resultado financeiro calculado com saldo bancário real.
-* Acessar dados de outros usuários.
-* Executar ações destrutivas sem a autorização necessária.
-* Prometer que determinada estratégia garantirá economia.
-* Apresentar informações financeiras incertas como fatos.
-
----
-
-# 6. REGRAS DE NEGÓCIO
-
-## RN01. Tipos de transação
-
-Cada transação deverá ser identificada como receita ou despesa.
-
-## RN02. Valores monetários
-
-Os valores deverão ser positivos e armazenados utilizando um tipo numérico adequado à precisão monetária, evitando erros de ponto flutuante.
-
-A moeda inicial será o real brasileiro (BRL).
-
-## RN03. Datas
-
-As datas deverão ser interpretadas no contexto local do usuário, utilizando o fuso horário configurado para a aplicação.
-
-O sistema deverá evitar interpretações incorretas de expressões como "hoje", "ontem" e "semana passada".
-
-## RN04. Categorias
-
-Cada transação deverá possuir uma categoria válida, com possibilidade de classificação inicial como "Outros" quando não houver informação suficiente.
-
-O usuário poderá corrigir a categoria.
-
-## RN05. Resultado financeiro
-
-O resultado do período será calculado pela seguinte fórmula:
-
-Resultado financeiro = receitas registradas no período - despesas registradas no período.
-
-Esse indicador não deverá ser apresentado como saldo bancário real.
-
-## RN06. Atualização dos indicadores
-
-Toda criação, edição ou exclusão de transação deverá refletir corretamente no dashboard, no histórico e nos relatórios.
-
-## RN07. Metas
-
-Cada meta deverá possuir um identificador, um nome, um valor desejado e, opcionalmente, um prazo.
-
-O progresso deverá ser calculado conforme um método definido e comunicado ao usuário.
-
-## RN08. Isolamento de dados
-
-Cada usuário deverá acessar somente as próprias transações, metas, perfil e conversas privadas.
-
-Essa regra deverá ser aplicada no backend e no banco de dados, e não apenas na interface.
-
-## RN09. Exclusão
-
-A exclusão de transações deverá solicitar confirmação e atualizar os indicadores após a conclusão bem-sucedida da operação.
-
-## RN10. Integridade
-
-As operações deverão validar os dados antes da gravação.
-
-O sistema deverá apresentar mensagens claras quando houver falha de validação, indisponibilidade da IA ou erro de persistência.
-
----
-
-# 7. DESIGN UNIVERSAL, ACESSIBILIDADE E USABILIDADE
-
-## 7.1. Diretriz principal
-
-O FinanChat deverá seguir os princípios de Design Universal (Design for All), buscando oferecer uma experiência de uso eficiente, intuitiva, confortável e acessível ao maior número possível de pessoas.
-
-O objetivo é permitir que pessoas com diferentes idades, habilidades, níveis de alfabetização digital, condições de acesso e necessidades individuais utilizem o aplicativo com autonomia.
-
-A acessibilidade deverá ser considerada desde a concepção da interface e da arquitetura, e não apenas como acabamento visual.
-
-## 7.2. Simplicidade e linguagem
-
-* Utilizar linguagem cotidiana e objetiva.
-* Evitar termos financeiros desnecessariamente técnicos.
-* Explicar conceitos quando necessário.
-* Manter a navegação previsível.
-* Reduzir etapas desnecessárias.
-* Apresentar instruções claras.
-* Evitar exigir comandos específicos no chat.
-
-## 7.3. Acessibilidade visual
-
-* Utilizar contraste adequado entre texto e fundo.
-* Manter tipografia legível.
-* Oferecer hierarquia visual consistente.
-* Permitir ampliação do conteúdo sem perda de funcionalidades.
-* Não utilizar somente cores para representar estados.
-* Diferenciar receitas, despesas, erros e alertas por texto, ícones ou outros indicadores complementares.
-
-## 7.4. Leitores de tela e tecnologias assistivas
-
-* Utilizar elementos semânticos apropriados.
-* Disponibilizar nomes acessíveis para controles interativos.
-* Incluir textos alternativos em imagens relevantes.
-* Garantir que campos de formulário possuam rótulos.
-* Preservar a ordem lógica de leitura.
-* Anunciar mensagens importantes de sucesso e erro quando aplicável.
-* Evitar componentes personalizados que impeçam a navegação assistida.
-
-## 7.5. Navegação por teclado
-
-* Permitir navegar pelas funcionalidades principais sem mouse.
-* Garantir foco de teclado visível.
-* Manter uma ordem lógica de navegação.
-* Permitir utilizar e enviar mensagens no chat por teclado.
-* Evitar elementos inacessíveis ou dependentes exclusivamente de gestos.
-
-## 7.6. Acessibilidade motora
-
-* Oferecer áreas de toque confortáveis em dispositivos móveis.
-* Evitar exigir movimentos excessivamente precisos.
-* Não depender exclusivamente de arrastar e soltar.
-* Disponibilizar alternativas para interações complexas.
-* Evitar operações destrutivas acionadas acidentalmente.
-
-## 7.7. Design responsivo
-
-A aplicação deverá oferecer boa experiência em:
-
-* Celulares.
-* Tablets.
-* Notebooks.
-* Computadores de mesa.
-
-O layout deverá adaptar-se aos diferentes tamanhos de tela sem ocultar funcionalidades essenciais ou exigir rolagem horizontal desnecessária.
-
-## 7.8. Inclusão de diferentes perfis
-
-O projeto deverá considerar especialmente:
-
-* Pessoas idosas.
-* Pessoas com baixa visão.
-* Pessoas com daltonismo.
-* Pessoas com dificuldades motoras.
-* Pessoas com pouca familiaridade com tecnologia.
-* Pessoas com diferentes níveis de compreensão de leitura.
-* Usuários que acessam o aplicativo em dispositivos com telas pequenas.
-
-Esses perfis deverão orientar as decisões de design sem presumir que todas as pessoas de um mesmo grupo possuem as mesmas necessidades.
-
-## 7.9. Feedback e prevenção de erros
-
-* Informar quando uma operação estiver em andamento.
-* Confirmar quando uma transação tiver sido registrada.
-* Apresentar mensagens de erro compreensíveis.
-* Oferecer orientações para corrigir problemas.
-* Permitir revisar dados antes da confirmação.
-* Solicitar confirmação antes de exclusões.
-* Preservar as informações digitadas quando ocorrer uma falha recuperável.
-
-## 7.10. Personalização
-
-Quando viável para o MVP, disponibilizar:
-
-* Tema claro e escuro.
-* Ajustes úteis de apresentação.
-* Redução de animações.
-* Preferências persistentes do usuário.
-
-Esses recursos não deverão aumentar desnecessariamente a complexidade do aplicativo.
-
-## 7.11. Visualização de dados
-
-* Apresentar valores monetários de forma clara.
-* Utilizar títulos e legendas nos gráficos.
-* Disponibilizar descrições textuais dos principais resultados.
-* Evitar gráficos excessivamente complexos.
-* Não depender apenas de cores para transmitir informações.
-* Manter os dados compreensíveis em telas pequenas.
-
-## 7.12. Referência de acessibilidade
-
-Utilizar as Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.2 como referência, buscando o nível AA quando aplicável.
-
-Não declarar conformidade integral sem realizar verificações e testes adequados.
-
-## 7.13. Critérios de validação do design
-
-Verificar se:
-
-* As principais funcionalidades podem ser utilizadas por teclado.
-* Os controles possuem identificação acessível.
-* O foco de navegação é visível.
-* O contraste e a legibilidade são adequados.
-* Os gráficos possuem alternativas textuais.
-* A aplicação funciona em diferentes tamanhos de tela.
-* As mensagens são claras e compreensíveis.
-* As transações podem ser corrigidas sem reiniciar todo o fluxo.
-* Os componentes não dependem exclusivamente de cores, gestos ou animações.
-* A experiência é compreensível para pessoas iniciantes em tecnologia.
-
-Não adicionar recursos de acessibilidade apenas de maneira decorativa. Os recursos implementados deverão ser funcionais e testáveis.
-
----
-
-# 8. IDENTIDADE VISUAL
-
-A identidade visual deverá transmitir confiança, clareza, simplicidade e acolhimento.
-
-## Diretrizes
-
-* Estilo moderno e profissional.
-* Layout organizado e consistente.
-* Paleta de cores equilibrada.
-* Tipografia legível.
-* Ícones compreensíveis.
-* Espaçamento adequado.
-* Hierarquia visual clara.
-* Componentes reutilizáveis.
-* Animações discretas e não essenciais.
-* Ausência de poluição visual.
-
-Evitar um dashboard genérico composto por muitos cartões, gráficos e números sem hierarquia.
-
-O chat deverá ter destaque visual e funcional, reforçando a proposta de organização financeira por conversas.
-
-A aplicação deverá utilizar:
-
-* Português brasileiro.
-* Valores monetários em reais.
-* Formatação consistente de moeda.
-* Datas no padrão brasileiro.
-* Mensagens e instruções claras.
-
----
-
-# 9. ARQUITETURA E TECNOLOGIAS
-
-## 9.1. Diretriz geral
-
-Recomendar uma arquitetura simples, segura e compatível com o desenvolvimento utilizando Lovable.
-
-A escolha das tecnologias deverá considerar rapidez de implementação, manutenção, segurança, custos e possibilidade de evolução.
-
-## 9.2. Interface
-
-Desenvolver uma aplicação web responsiva, priorizando a experiência em dispositivos móveis e mantendo boa usabilidade em computadores.
-
-A interface deverá utilizar componentes reutilizáveis e uma estrutura consistente.
-
-## 9.3. Backend e banco de dados
-
-Avaliar a utilização do Supabase como backend, incluindo:
-
-* PostgreSQL.
-* Autenticação.
-* Persistência das transações.
-* Persistência das metas.
-* Armazenamento do histórico de conversas, quando necessário.
-* Políticas de Row Level Security (RLS).
-* Regras de acesso por usuário.
-
-A escolha final deverá ser justificada com base nos requisitos do MVP.
-
-## 9.4. Integração com IA
-
-A aplicação poderá utilizar um modelo de linguagem para interpretar mensagens e produzir respostas.
-
-A integração deverá:
-
-* Manter chaves de API fora do código público do frontend.
-* Utilizar mecanismos seguros de acesso ao provedor.
-* Validar os dados retornados pelo modelo.
-* Separar interpretação de execução.
-* Utilizar operações controladas para consultar e modificar dados.
-* Não permitir que o modelo ignore as regras de autorização do backend.
-* Informar quando o serviço de IA estiver indisponível.
-
-## 9.5. Segurança
-
-* Implementar autenticação adequada.
-* Isolar os dados dos usuários.
-* Aplicar políticas de acesso no banco de dados.
-* Validar dados no backend.
-* Evitar exposição de segredos.
-* Tratar erros sem revelar informações sensíveis.
-* Restringir o acesso às operações financeiras.
-* Evitar registrar dados pessoais desnecessários em logs.
-
-## 9.6. Privacidade e LGPD
-
-O aplicativo deverá considerar os princípios da Lei Geral de Proteção de Dados Pessoais (LGPD).
-
-Deverá:
-
-* Explicar quais dados são armazenados e para qual finalidade.
-* Limitar a coleta ao necessário para o funcionamento.
-* Restringir o acesso às informações pessoais.
-* Evitar compartilhar dados financeiros com serviços externos sem necessidade e transparência.
-* Considerar os direitos dos titulares dos dados.
-* Prever formas apropriadas de exclusão de dados pessoais.
-* Documentar as dependências externas que processam informações.
-
-As medidas específicas deverão ser avaliadas conforme a arquitetura e os serviços efetivamente utilizados.
-
-## 9.7. Custos e dependências
-
-Antes da implementação, identificar:
-
-* Necessidade de plano pago.
-* Limites dos serviços utilizados.
-* Custos potenciais de chamadas à IA.
-* Dependência de provedores externos.
-* Recursos disponíveis nos planos escolhidos.
-* Alternativas para desenvolvimento e demonstração com baixo custo.
-
-Não presumir que integrações ou funcionalidades pagas estarão disponíveis gratuitamente.
-
-## 9.8. Dados demonstrativos
-
-Quando necessário, utilizar dados fictícios claramente identificados.
-
-Esses dados deverão ser separados das informações reais do usuário e não poderão ser apresentados como registros financeiros verdadeiros.
-
-O MVP não deverá depender de integração bancária real.
-
----
-
-# 10. PLANO DE IMPLEMENTAÇÃO
-
-A implementação deverá ocorrer em etapas pequenas, verificáveis e priorizadas.
-
-## Etapa 1 — Planejamento e arquitetura
-
-Objetivo: validar o escopo, as tecnologias e as principais decisões do produto.
-
-Entregáveis:
-
-* Estrutura de telas.
-* Fluxos de navegação.
-* Arquitetura recomendada.
-* Modelo de dados inicial.
-* Regras de negócio.
-* Identidade visual preliminar.
-
-Critério de conclusão: plano aprovado antes de iniciar a implementação completa.
-
-## Etapa 2 — Interface e navegação
-
-Objetivo: criar a estrutura visual da aplicação.
-
-Entregáveis:
-
-* Apresentação inicial.
-* Autenticação.
-* Dashboard.
-* Chat.
-* Histórico.
-* Metas.
-* Relatórios.
-* Configurações.
-
-Critério de conclusão: navegação consistente, responsiva e acessível entre as principais telas.
-
-## Etapa 3 — Backend e autenticação
-
-Objetivo: implementar persistência e isolamento de dados.
-
-Entregáveis:
-
-* Banco de dados.
-* Autenticação.
-* Tabelas e relacionamentos.
-* Políticas de acesso.
-* Validação das operações.
-
-Critério de conclusão: cada usuário consegue acessar e modificar somente os dados autorizados.
-
-## Etapa 4 — Transações financeiras
-
-Objetivo: implementar os fluxos de receitas e despesas.
-
-Entregáveis:
-
-* Criação de transações.
-* Edição e exclusão.
-* Categorias.
-* Validação.
-* Atualização dos indicadores.
-
-Critério de conclusão: as operações funcionam corretamente e os dados permanecem consistentes após recarregar a aplicação.
-
-## Etapa 5 — Agente financeiro
-
-Objetivo: integrar o chat ao backend.
-
-Entregáveis:
-
-* Interpretação de mensagens.
-* Identificação de intenções.
-* Extração de informações.
-* Confirmação de operações.
-* Consultas financeiras.
-* Tratamento de erros.
-* Mensagens de feedback.
-
-Critério de conclusão: o agente executa corretamente os fluxos prioritários utilizando os dados persistidos.
-
-## Etapa 6 — Metas e relatórios
-
-Objetivo: permitir acompanhamento e interpretação dos dados financeiros.
-
-Entregáveis:
-
-* Criação de metas.
-* Cálculo de progresso.
-* Relatórios por categoria.
-* Consultas por período.
-* Recomendações educativas.
-
-Critério de conclusão: os resultados são consistentes com as transações registradas.
-
-## Etapa 7 — Acessibilidade e qualidade
-
-Objetivo: verificar usabilidade, acessibilidade e estabilidade.
-
-Entregáveis:
-
-* Revisão responsiva.
-* Verificação de contraste.
-* Testes de teclado.
-* Testes de leitores de tela quando possível.
-* Revisão das mensagens.
-* Testes de regras de negócio.
-* Correção dos problemas encontrados.
-
-Critério de conclusão: os fluxos essenciais passam pelos testes definidos e os problemas identificados são documentados.
-
-## Etapa 8 — Validação do MVP
-
-Objetivo: verificar se a solução resolve o problema proposto.
-
-Entregáveis:
-
-* Roteiro de testes.
-* Evidências dos testes.
-* Feedback dos participantes, quando disponível.
-* Lista de melhorias.
-* Resumo dos resultados observados.
-
-Critério de conclusão: relatório que diferencia resultados reais, limitações conhecidas e hipóteses ainda não validadas.
-
----
-
-# 11. PLANO DE VALIDAÇÃO INICIAL
-
-## 11.1. Hipóteses
-
-H1: registrar transações por conversa é mais simples para o público-alvo do que preencher formulários tradicionais.
-
-H2: o usuário consegue compreender os principais indicadores financeiros sem orientação técnica.
-
-H3: o agente consegue interpretar corretamente mensagens comuns de receitas e despesas.
-
-H4: uma interface acessível e previsível reduz as dificuldades de uso.
-
-H5: os usuários compreendem a diferença entre resultado financeiro calculado e saldo bancário real.
-
-Essas hipóteses deverão ser testadas. Não devem ser apresentadas como resultados já comprovados.
-
-## 11.2. Participantes
-
-Quando possível, convidar pessoas com diferentes níveis de familiaridade com tecnologia e organização financeira.
-
-Buscar diversidade de idade e necessidades de acessibilidade, respeitando a participação voluntária e a privacidade.
-
-## 11.3. Tarefas de teste
-
-Solicitar aos participantes que:
-
-1. Acessem o aplicativo.
-2. Registrem uma despesa por conversa.
-3. Registrem uma receita.
-4. Consultem gastos por categoria.
-5. Corrijam uma transação.
-6. Criem uma meta financeira.
-7. Consultem o progresso da meta.
-8. Localizem o resumo financeiro mensal.
-
-## 11.4. Perguntas de avaliação
-
-* Foi fácil entender como utilizar o aplicativo?
-* O registro por conversa foi intuitivo?
-* As respostas do agente foram claras?
-* Você conseguiu corrigir informações?
-* Os indicadores financeiros foram compreensíveis?
-* Alguma etapa causou confusão?
-* Você utilizaria esse aplicativo para organizar suas finanças?
-* O que deveria ser melhorado primeiro?
-
-## 11.5. Indicadores
-
-Medir, quando aplicável:
-
-* Percentual de tarefas concluídas.
-* Tempo necessário para concluir cada tarefa.
-* Quantidade de erros.
-* Quantidade de solicitações que exigiram ajuda.
-* Percepção de facilidade de uso.
-* Problemas de acessibilidade identificados.
-* Precisão das interpretações do agente em um conjunto de testes definido.
-
-Os resultados deverão ser registrados somente após os testes serem realizados.
-
-## 11.6. Testes funcionais
-
-Criar cenários para:
-
-* Registro de receitas.
-* Registro de despesas.
-* Valores inválidos.
-* Mensagens ambíguas.
-* Datas relativas.
-* Tentativas de duplicação.
-* Edição de transações.
-* Exclusão de transações.
-* Falha na gravação.
-* Indisponibilidade da IA.
-* Isolamento de dados entre usuários.
-* Atualização dos indicadores.
-* Criação e acompanhamento de metas.
-
----
-
-# 12. CRITÉRIOS DE ACEITAÇÃO DO MVP
-
-O MVP será considerado funcional quando os seguintes critérios forem atendidos:
-
-CA01. O usuário consegue realizar autenticação.
-
-CA02. O usuário consegue registrar uma despesa por meio de uma conversa.
-
-CA03. O usuário consegue registrar uma receita por meio de uma conversa.
-
-CA04. O agente identifica corretamente valor, tipo, descrição, data e categoria quando as informações estão disponíveis.
-
-CA05. O agente solicita esclarecimentos quando faltam informações essenciais.
-
-CA06. A transação só é apresentada como registrada após confirmação da gravação.
-
-CA07. O usuário consegue consultar receitas e despesas por período.
-
-CA08. O usuário consegue consultar gastos por categoria.
-
-CA09. O usuário consegue editar e excluir transações.
-
-CA10. Os indicadores são atualizados após as alterações.
-
-CA11. O usuário consegue criar e acompanhar uma meta financeira.
-
-CA12. O agente utiliza os dados persistidos para responder às consultas financeiras.
-
-CA13. O sistema apresenta mensagens claras quando uma operação falha.
-
-CA14. Os dados de usuários diferentes permanecem isolados.
-
-CA15. As telas principais funcionam em dispositivos móveis e computadores.
-
-CA16. As funcionalidades essenciais podem ser utilizadas por teclado.
-
-CA17. Os componentes interativos possuem identificação acessível.
-
-CA18. As informações financeiras não dependem exclusivamente de cores ou gráficos.
-
-CA19. O usuário consegue corrigir informações interpretadas incorretamente.
-
-CA20. O sistema não apresenta dados fictícios como se fossem registros reais.
-
-CA21. Os principais fluxos possuem testes funcionais documentados.
-
-CA22. As limitações conhecidas do MVP são identificadas.
-
----
-
-# 13. PRINCIPAIS RISCOS E MITIGAÇÕES
-
-## Risco 1 — Chat superficial
-
-Problema: o chat responde de maneira genérica, mas não executa operações reais.
-
-Mitigação: implementar ferramentas controladas que conectem o agente ao backend e testar fluxos completos.
-
-## Risco 2 — Interpretações incorretas
-
-Problema: o agente identifica valores, datas ou categorias incorretamente.
-
-Mitigação: validar os dados, apresentar resumos para confirmação e permitir correções.
-
-## Risco 3 — Inconsistência financeira
-
-Problema: dashboard, histórico e relatórios apresentam valores diferentes.
-
-Mitigação: utilizar dados persistidos como fonte de verdade e centralizar as regras de cálculo.
-
-## Risco 4 — Falhas de segurança
-
-Problema: usuários conseguem acessar informações de outras contas.
-
-Mitigação: implementar autenticação, autorização e políticas de acesso no backend e no banco de dados.
-
-## Risco 5 — Acessibilidade insuficiente
-
-Problema: pessoas com necessidades diferentes encontram barreiras para utilizar a aplicação.
-
-Mitigação: adotar Design Universal desde o início, realizar testes de acessibilidade e corrigir os problemas identificados.
-
----
-
-# 14. ORIENTAÇÕES PARA O LOVABLE
-
-Durante o desenvolvimento:
-
-1. Trabalhe em etapas pequenas e verificáveis.
-2. Preserve as funcionalidades que já estiverem funcionando.
-3. Antes de modificar estruturas importantes, explique brevemente o impacto da alteração.
-4. Não considere uma funcionalidade concluída apenas porque a interface foi criada.
-5. Verifique a persistência real dos dados.
-6. Não simule sucesso quando uma operação falhar.
-7. Priorize segurança, integridade dos dados e acessibilidade.
-8. Utilize componentes reutilizáveis.
-9. Evite adicionar dependências desnecessárias.
-10. Informe limitações técnicas e dependências externas.
-11. Não invente resultados de testes.
-12. Corrija erros encontrados antes de ampliar desnecessariamente o escopo.
-13. Mantenha a interface em português brasileiro.
-14. Utilize dados fictícios apenas quando claramente identificados.
-15. Não implemente integrações bancárias reais nesta etapa.
-
-Se uma decisão técnica importante não estiver definida, apresente a opção recomendada e uma justificativa objetiva antes de implementá-la.
-
----
-
-# 15. RESULTADO ESPERADO
-
-Ao final do desenvolvimento do MVP, esperamos ter uma aplicação funcional que permita ao usuário organizar suas finanças pessoais por meio de conversas naturais.
-
-O produto deverá reunir:
-
-* Uma interface simples e acessível.
-* Um agente financeiro conectado aos dados reais da aplicação.
-* Registro e consulta de receitas e despesas.
-* Categorização de transações.
-* Dashboard financeiro.
-* Histórico editável.
-* Metas de economia.
-* Relatórios simples.
-* Recomendações educativas.
-* Autenticação e isolamento de dados.
-* Critérios documentados de qualidade e acessibilidade.
-
-O sucesso do MVP deverá ser avaliado pela capacidade de executar os fluxos essenciais com consistência, pela facilidade de uso e pelos resultados efetivamente observados nos testes.
-
----
-
-# 16. PRÓXIMOS PASSOS
-
-Antes de iniciar a construção completa:
-
-1. Analise este PRD e identifique eventuais inconsistências, dependências ou decisões que ainda precisam ser tomadas.
-2. Apresente a arquitetura recomendada, o modelo de dados inicial e a sequência de implementação.
-3. Identifique os requisitos essenciais de segurança, privacidade e Design Universal.
-4. Sugira critérios para validar a primeira entrega.
-5. Aguarde a aprovação do planejamento antes de implementar todas as funcionalidades.
-
-A prioridade é construir primeiro um fluxo funcional de ponta a ponta: o usuário envia uma mensagem, o agente interpreta os dados, o usuário confirma a operação, o sistema registra a transação e os indicadores são atualizados corretamente.
-
-A partir desse fluxo, o produto deverá evoluir de maneira incremental, mantendo a proposta central do FinanChat: tornar a organização financeira mais simples, inclusiva e acessível por meio de conversas naturais.
 ```
 Interaçoes com o Lovable
 
 > Crie um App de Finanças Pessoais com base no seguinte PRD (Product Requirements Document): (PRD)
+>Quero finalizar o MVP do FinanChat, um aplicativo de finanças pessoais com interface em português brasileiro, desenvolvido nes
+> Quero melhorar a organização da interface do projeto FinanChat, mantendo as funcionalidades existentes de armazenamento local e integração com IA. 
 
   
 - Prints ou pequenos vídeos das interações com a IA;  
@@ -1147,14 +316,11 @@ O projeto também prioriza o Design Universal, buscando proporcionar uma experi�
 
 Desenvolvido com o apoio de ferramentas de inteligência artificial por meio da abordagem Vibe Coding, o FinanChat faz parte de um desafio da DIO e tem como foco demonstrar como a IA pode auxiliar na criação de soluções digitais práticas para problemas do cotidiano.
 
-- Uma breve **reflexão sobre o processo**:
-  - O que funcionou bem?  
-  - O que não funcionou como o esperado?  
-  - O que aprendeu sobre conversar com IAs?
+### Reflexão
 
-> [!TIP]
-> Publique seu repositório e compartilhe o link na plataforma da DIO! Sua entrega é a prova de que você domina o raciocínio de Vibe Coding, mesmo sem escrever uma única linha de código.
+### O que funcionou bem? 
 
-## 💬 Conclusão
+### O que não funcionou como o esperado? 
+Feito alguns refinamentos no entendimento da IA com relação a investimentos e reserva de emergência, pois em vez de deixar como reserva estava colocando como despesas e o valor sumia em vez de ser transferido.
+### O que aprendeu sobre conversar com IAs?
 
-Vibe Coding é sobre clareza, curiosidade e criatividade, não sobre perfeição técnica. O verdadeiro objetivo aqui é aprender a pensar junto com a IA, transformando ideias em conceitos reais e enxergando a tecnologia como uma extensão do seu raciocínio criativo. Cada interação é um experimento, quanto mais clara for sua intenção, mais surpreendente será o resultado.
